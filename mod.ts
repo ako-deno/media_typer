@@ -87,7 +87,7 @@ export function test(string: string): boolean {
  */
 export function parse(string: string): MediaType {
   console.log("stringstring:", string);
-  
+
   const match = TYPE_REGEXP.exec(string.toLowerCase());
   console.log("matchmatch:", match);
   if (!match) {
