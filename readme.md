@@ -20,16 +20,6 @@ parameters in HTTP (for example, the `Content-Type` header), use the
 import { format, test, parse, MediaType }  from "https://raw.githubusercontent.com/ako-deno/media_typer/master/mod.ts";
 ```
 
-### MediaType
-
-```TypeScript
-interface MediaType {
-  type: string;
-  subtype: string;
-  suffix?: string;
-}
-```
-
 ### parse(string: string): MediaType
 
 ```js
@@ -67,6 +57,16 @@ let valid = test('image/svg+xml');
 
 Validate a media type string. This will return `true` is the string is a well-
 formatted media type, or `false` otherwise.
+
+### MediaType
+
+```TypeScript
+interface MediaType {
+  type: string;
+  subtype: string;
+  suffix?: string;
+}
+```
 
 # License
 
