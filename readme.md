@@ -17,7 +17,7 @@ parameters in HTTP (for example, the `Content-Type` header), use the
 
 ## API
 ```js
-import { format, test, parse, MediaType }  from "https://raw.githubusercontent.com/ako-deno/media_typer/master/mod.ts";
+import { format, test, parse, MediaType }  from "https://deno.land/x/media_typer/mod.ts";
 ```
 
 ### parse(string: string): MediaType
