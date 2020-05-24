@@ -27,7 +27,7 @@ let obj = parse('image/svg+xml');
 ```
 
 Parse a media type string. This will return an object with the following
-properties (examples are shown for the string `'image/svg+xml; charset=utf-8'`):
+properties (examples are shown for the string `'image/svg+xml'`):
 
  - `type`: The type of the media type (always lower case). Example: `'image'`
 
