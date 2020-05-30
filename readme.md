@@ -2,6 +2,7 @@
 
 [![tag](https://img.shields.io/github/tag/ako-deno/media_typer.svg)](https://github.com/ako-deno/media_typer/tags)
 ![media_typer-ci](https://github.com/ako-deno/media_typer/workflows/media_typer-ci/badge.svg)
+[![HitCount](http://hits.dwyl.com/ako-deno/media_typer.svg)](http://hits.dwyl.com/ako-deno/media_typer)
 
 Simple RFC 6838 media type parser and formatter for Deno, compatible with Browser. Based on `https://github.com/jshttp/media-typer`.
 
