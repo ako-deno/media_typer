@@ -1,7 +1,7 @@
 import {
-  assertStrictEq,
+  assertStrictEquals,
   assertThrows,
-} from "https://deno.land/std/testing/asserts.ts";
+} from "https://deno.land/std@0.60.0/testing/asserts.ts";
 import { format, test, parse } from "../mod.ts";
 
 const invalidTypes = [
@@ -19,17 +19,17 @@ const invalidTypes = [
 
 Deno.test("format(obj) should format basic type", () => {
   const str = format({ type: "text", subtype: "html" });
-  assertStrictEq(str, "text/html");
+  assertStrictEquals(str, "text/html");
 });
 
 Deno.test("format(obj) should format type with suffix", () => {
   const str = format({ type: "text", subtype: "html" });
-  assertStrictEq(str, "text/html");
+  assertStrictEquals(str, "text/html");
 });
 
 Deno.test("format(obj) should format type with suffix", function () {
   const str = format({ type: "image", subtype: "svg", suffix: "xml" });
-  assertStrictEq(str, "image/svg+xml");
+  assertStrictEquals(str, "image/svg+xml");
 });
 
 Deno.test("format(obj) should reject invalid type", function () {
@@ -49,22 +49,22 @@ Deno.test("format(obj) should reject invalid suffix", function () {
 
 Deno.test("parse(string) should parse basic type", function () {
   const type = parse("text/html");
-  assertStrictEq(type.type, "text");
-  assertStrictEq(type.subtype, "html");
+  assertStrictEquals(type.type, "text");
+  assertStrictEquals(type.subtype, "html");
 });
 
 Deno.test("parse(string) should parse with suffix", function () {
   const type = parse("image/svg+xml");
-  assertStrictEq(type.type, "image");
-  assertStrictEq(type.subtype, "svg");
-  assertStrictEq(type.suffix, "xml");
+  assertStrictEquals(type.type, "image");
+  assertStrictEquals(type.subtype, "svg");
+  assertStrictEquals(type.suffix, "xml");
 });
 
 Deno.test("parse(string) should lower-case type", function () {
   const type = parse("IMAGE/SVG+XML");
-  assertStrictEq(type.type, "image");
-  assertStrictEq(type.subtype, "svg");
-  assertStrictEq(type.suffix, "xml");
+  assertStrictEquals(type.type, "image");
+  assertStrictEquals(type.subtype, "svg");
+  assertStrictEquals(type.suffix, "xml");
 });
 
 invalidTypes.forEach(function (type) {
@@ -77,22 +77,22 @@ invalidTypes.forEach(function (type) {
 });
 
 Deno.test("test(string) should pass basic type", function () {
-  assertStrictEq(test("text/html"), true);
+  assertStrictEquals(test("text/html"), true);
 });
 
 Deno.test("test(string) should pass with suffix", function () {
-  assertStrictEq(test("image/svg+xml"), true);
+  assertStrictEquals(test("image/svg+xml"), true);
 });
 
 Deno.test("test(string) should pass upper-case type", function () {
-  assertStrictEq(test("IMAGE/SVG+XML"), true);
+  assertStrictEquals(test("IMAGE/SVG+XML"), true);
 });
 
 invalidTypes.forEach(function (type) {
   Deno.test(
     "test(string) should fail invalid media type " + JSON.stringify(type),
     function () {
-      assertStrictEq(test(type), false);
+      assertStrictEquals(test(type), false);
     },
   );
 });
